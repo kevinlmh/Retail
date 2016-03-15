@@ -1,0 +1,23 @@
+{
+  "name": "retail",
+  "version": "1.0.0",
+  "description": "A MEAN stack retail application",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinlmh/Retail.git"
+  },
+  "author": "Minghui Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinlmh/Retail/issues"
+  },
+  "homepage": "https://github.com/kevinlmh/Retail#readme",
+  "dependencies": {
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.7"
+  }
+}
