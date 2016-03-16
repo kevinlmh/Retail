@@ -1,27 +1,27 @@
-var mongodb = require('mongodb');
+var mongoose = require('mongoose');
+var schema = require('./schema');
 
 var url = 'mongodb://localhost:27017/example';
-mongodb.MongoClient.connect(url, function(error, db) {
+mongoose.connect(url);
+
+var User = mongoose.model('User', schema, 'users');
+
+var user = new User({
+  name: 'John Doe',
+  email: 'john.doe@test.com'
+});
+
+user.save(function(error) {
   if (error) {
     console.log(error);
     process.exit(1);
   }
-
-  db.collection('sample').insert({ x : 1}, function(error, result) {
+  User.find({ name: 'John Doe' }, function(error, docs) {
     if (error) {
       console.log(error);
       process.exit(1);
     }
-  });
-
-  db.collection('sample').find().toArray(function(error, docs) {
-    if (error) {
-      console.log(error);
-      process.exit(1);
-    }
-    docs.forEach(function(doc) {
-      console.log(JSON.stringify(doc));
-    });
+    console.log(require('util').inspect(docs));
     process.exit(0);
-  })
+  });
 });

@@ -4,7 +4,8 @@
   "description": "A MEAN stack retail application",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "test-kitten": "mocha -R -nyan test"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/kevinlmh/Retail#readme",
   "dependencies": {
+    "mocha": "^2.4.5",
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.7"
   }
