@@ -10,5 +10,7 @@ module.exports = function() {
     res.send('Hello, world!');
   });
 
+  app.use('/api/v1', require('./api')(wagner));
+
   return app;
 }
