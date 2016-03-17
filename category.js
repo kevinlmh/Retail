@@ -14,5 +14,5 @@ var categorySchema = {
   }]
 };
 
-module.exports = mongoose.Schema(categorySchema);
+module.exports = new mongoose.Schema(categorySchema);
 exports.categorySchema = categorySchema;
