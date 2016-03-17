@@ -11,5 +11,5 @@ module.exports = function(wagner) {
 
   return {
     Category: Category
-  }
-}
+  };
+};
