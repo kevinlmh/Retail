@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var userSchema = {
   profile: {
-    name: {
+    username: {
       type: String,
       required: true,
       lowercase: true
@@ -31,4 +31,6 @@ var userSchema = {
   }
 };
 
-module.exports = mongoose.Schema(userSchema);
+module.exports = new mongoose.Schema(userSchema);
+module.exports.set('toObject', { virtual: true });
+module.exports.set('tpJSON', { virtual: true });
