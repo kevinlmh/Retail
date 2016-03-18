@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kevinlmh/Retail#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "4.12.3",
     "http-status": "0.1.8",
     "mongoose": "4.0.3",

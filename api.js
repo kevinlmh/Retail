@@ -1,10 +1,10 @@
 var express = require('express');
-var body-parser = require('body-parser');
+var bodyparser = require('body-parser');
 var status = require('http-status');
 
 module.exports = function(wagner) {
   var api = express.Router();
-  api.use(body-parser.json());
+  api.use(bodyparser.json());
 
   api.get('/category/id/:id', wagner.invoke(function(Category) {
     return function(req, res) {
