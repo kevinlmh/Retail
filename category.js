@@ -15,4 +15,4 @@ var categorySchema = {
 };
 
 module.exports = new mongoose.Schema(categorySchema);
-exports.categorySchema = categorySchema;
+module.exports.categorySchema = categorySchema;

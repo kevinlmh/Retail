@@ -10,7 +10,7 @@ module.exports = function(wagner) {
   var models = {
     Category: Category,
     Product: Product
-  }
+  };
 
   // For each model, register a factory
   _.each(models, function(value, key) {

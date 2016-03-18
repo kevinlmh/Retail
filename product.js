@@ -16,9 +16,9 @@ var productSchema = {
     amount: {
       type: Number,
       required: true,
-      set: function(p) {
-        this.internal.approximatePriceUSD = p / (fx()[this.price.currency] || 1);
-        return p;
+      set: function(v) {
+        this.internal.approximatePriceUSD = v / (fx()[this.price.currency] || 1);
+        return v;
       }
     },
     currency: {
@@ -26,9 +26,9 @@ var productSchema = {
       // only three currencies supported for now
       enum: ['USD', 'EUR', 'GPB'],
       required: true,
-      set: function(c) {
-        this.internal.approximatePriceUSD = this.price.amount / (fx()[c] || 1);
-        return c;
+      set: function(v) {
+        this.internal.approximatePriceUSD = this.price.amount / (fx()[v] || 1);
+        return v;
       }
     }
   },
@@ -38,16 +38,16 @@ var productSchema = {
   }
 };
 
-var schema = mongoose.Schema(productSchema);
+var schema = new mongoose.Schema(productSchema);
 
 var currencySymbols = {
   'USD': '$',
   'EUR': '€',
   'GBP': '£'
-}
+};
 
 schema.virtual('displayPrice').get(function() {
-  return currencySymbols[this.price.currency] + this.price.amount;
+  return currencySymbols[this.price.currency] + '' + this.price.amount;
 });
 
 schema.set('toObject', { virtuals: true });
